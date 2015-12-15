@@ -27,4 +27,26 @@
 	Ruby - ok, 
 	для Node - ?
 
+	Установка Node.JS под Mac OS X 10.6
+
+
+	git clone --depth 1 https://github.com/nodejs/node
+	cd node
+	export JOBS=2 # optional, sets number of parallel commands.
+	mkdir ~/local
+	./configure --prefix=$HOME/local/node
+	make
+	make install
+	export PATH=$HOME/local/node/bin:$PATH
+
+	проверяем:
+
+	node -v
+
+	ок- работает.
+
+	
+
+
+
 
