@@ -27,25 +27,44 @@
 	Ruby - ok, 
 	для Node - ?
 
-	Установка Node.JS под Mac OS X 10.6
+	* Установка Node.JS 
+		Mac OS:
+			* Устанавливаем Homebrew (Менеджер недостающих пакетов для OS X)
+
+			ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+			* Затем Node.js
+
+			brew install node
+
+			* Проверяем
+
+			node -v
+		
+		Linux:
+			* Копируем с сайта nodejs.org ссылку на свежую версию, устанавливаем:
+
+			https://nodejs.org/dist/v4.2.3/node-v4.2.3-linux-x64.tar.gz
+
+			tar -xvf node-v0.1.97.tar.gz
+
+			cd node*
+			./configure
+
+			собрать в пакет и установить:
+
+			checkinstall --fstrans=no --install=no --pkgname=node.js --pkgversion "4.2.3" --default
 
 
-	git clone --depth 1 https://github.com/nodejs/node
-	cd node
-	export JOBS=2 # optional, sets number of parallel commands.
-	mkdir ~/local
-	./configure --prefix=$HOME/local/node
-	make
-	make install
-	export PATH=$HOME/local/node/bin:$PATH
+		Windows:
+			* С сайта nodejs.org скачиваем инсталлятор и устанавливаем.
 
-	проверяем:
+	* Установка typograf на js
 
-	node -v
 
-	ок- работает.
 
-	
+
+
 
 
 
