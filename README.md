@@ -5,7 +5,7 @@
  * находятся /tests
  * использовал:  https://github.com/samdark/Typograph/tree/master/tests
 
-# Для работы типокрафа необходим Node.js
+# Для работы типографа необходим Node.js
 
 	* Установка Node.JS 
 		Mac OS:
