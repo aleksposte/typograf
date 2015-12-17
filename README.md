@@ -32,7 +32,6 @@ brew install node
 
 ```
 node -v
-
 ```
 
 #### Linux:
@@ -58,7 +57,6 @@ checkinstall --fstrans=no --install=no --pkgname=node.js --pkgversion "4.2.3" --
 
 ```
 node -v
-
 ```
 
 #### Windows:
@@ -75,7 +73,6 @@ https://nodejs.org
 
 ```
 npm install typograf-cli -g
-
 ```
 ---
 
