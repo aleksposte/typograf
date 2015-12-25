@@ -2,7 +2,7 @@
 # Ввод параметров в файл:
 
 file_input_text = "tests/test_1.txt" # файл для обработки
-file_output_text = "tests/outpout_file.txt" # файл для вывода
+file_output_text = "tests/output_file.txt" # файл для вывода
 lang = "ru" # правила какого языка использовать для обработки (ru, en)
 
 # Добавление дополнительных правил для обработки:
@@ -23,27 +23,24 @@ option[:num_12] = false	# 12. Для открывающей кавычки
 option[:num_13] = false	# 13. Замена заглавной буквы на строчную с добавлением ударения
 
 rule = " "
-if option[:num_1]; rule += " -e common/html/e-mail"; end
-if option[:num_2]; rule += " -e common/html/escape"; end
-if option[:num_3]; rule += " -e common/html/nbr"; end
-if option[:num_4]; rule += " -e common/html/nbr"; end
-if option[:num_5]; rule += " -e common/html/stripTags"; end
-if option[:num_6]; rule += " -e common/html/url"; end
-if option[:num_7]; rule += " -e common/nbsp/afterNumber"; end
-if option[:num_8]; rule += " -e common/space/delLeadingBlanks"; end
-if option[:num_9]; rule += " -e ru/money/ruble"; end
-if option[:num_10]; rule += " -e ru/optalign/bracket"; end
-if option[:num_11]; rule += " -e ru/optalign/comma"; end
-if option[:num_12]; rule += " -e ru/optalign/quote"; end
-if option[:num_13]; rule += " -e ru/other/accent"; end
-
+rule += " -e common/html/e-mail" 			if option[:num_1]
+rule += " -e common/html/escape"    		if option[:num_2]
+rule += " -e common/html/nbr"       		if option[:num_3]
+rule += " -e common/html/nbr"       		if option[:num_4]
+rule += " -e common/html/stripTags" 		if option[:num_5]
+rule += " -e common/html/url" 				if option[:num_6]
+rule += " -e common/nbsp/afterNumber" 		if option[:num_7]
+rule += " -e common/space/delLeadingBlanks" if option[:num_8]
+rule += " -e ru/money/ruble" 				if option[:num_9]
+rule += " -e ru/optalign/bracket"			if option[:num_10]
+rule += " -e ru/optalign/comma" 			if option[:num_11]
+rule += " -e ru/optalign/quote" 			if option[:num_12]
+rule += " -e ru/other/accent" 				if option[:num_13]
 
 # Отравка параметров в типограф:
 all_options = "typograf -l #{lang} #{rule} #{file_input_text} > #{file_output_text}"
-#puts all_options
+puts all_options
 system(all_options)
-
-
 
 
 # # Вариант ввода параметров обработки текса через консоль:
