@@ -1,9 +1,17 @@
 
 # Ввод параметров в файл:
+class Typograf
+attr_accessor :file_input, :file_output, :lang
 
-file_input_text = "tests/test_1.txt" # файл для обработки
-file_output_text = "tests/output_file.txt" # файл для вывода
-lang = "ru" # правила какого языка использовать для обработки (ru, en)
+def initialize(file_input, file_output, lang='ru')
+	@file_input = file_input
+	@file_output = file_output
+	@lang = lang
+
+
+# file_input = "tests/test_1.txt" # файл для обработки
+# file_output = "tests/output_file.txt" # файл для вывода
+# lang = "ru" # правила какого языка использовать для обработки (ru, en)
 
 # Добавление дополнительных правил для обработки:
 
@@ -38,45 +46,11 @@ rule += " -e ru/optalign/quote" 			if option[:num_12]
 rule += " -e ru/other/accent" 				if option[:num_13]
 
 # Отравка параметров в типограф:
-all_options = "typograf -l #{lang} #{rule} #{file_input_text} > #{file_output_text}"
+all_options = "typograf -l #{@lang} #{rule} #{@file_input} > #{@file_output}"
 puts all_options
 system(all_options)
+end
+end
 
 
-# # Вариант ввода параметров обработки текса через консоль:
-
-# puts "Укажите файл для обработки (например: tests/test_2.txt)"
-# file_input_text = gets.chomp
-# puts "Укажите файл для вывода (например: tests/outpout_file.txt)"
-# file_output_text = gets.chomp
-# puts "Укажите язык обрабатываемого файла (ru, en)"
-# lang = gets.chomp
-
-# puts "Добавить правило обработки текста?(yes, no)" # Добавление правила.
-# option_rules = gets.chomp
-
-# if option_rules == "yes"
-# 	puts "правила:" # Правила даны для примера, их больше.
-# 	puts "1.Расстановка ссылок для эл. почты"
-# 	puts "2.Экранирование HTML"
-
-# 	puts "Укажите номер правила:"
-# 	num_rule = gets.chomp
-
-# 		if num_rule == '1'; rule = "-e common/html/e-mail" ;end
-# 		if num_rule == '2'; rule = "-e common/html/escape" ;end
-		
-# else
-# 	rule = " "
-# end
-
-# # Отравка параметров в типограф:
-# #puts "typograf -l #{lang} #{rule} #{file_input_text}" " > " "#{file_output_text}"
-
-# all_options = "typograf -l #{lang} #{rule} #{file_input_text} > #{file_output_text}"
-
-# system(all_options)
-
-# # end
-
-
+#typograf = Typograf.new("tests/test_1.txt", "tests/output_file.txt", "ru")
