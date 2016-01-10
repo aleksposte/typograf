@@ -89,7 +89,7 @@ require "./typograf"
 ###### Указать путь к файлу для обработки:
 
 ```ruby
-file_input = "tests/test_1.txt"
+file_input = "tests/input_file.txt"
 ```
 
 ###### Указать путь к файлу для вывода результата:

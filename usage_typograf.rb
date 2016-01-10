@@ -3,17 +3,17 @@
 require "./typograf"
 
 # Указать путь к файлу для обработки:
-file_input = "tests/test_1.txt"
+file_input = "tests/input_file.txt"
 
 # Указать путь к файлу для вывода результата:
 file_output = "tests/output_file.txt"
 
 # Указать, по правилам какого языка обрабатывать файл (ru, en, по умолчанию - ru)
-lang = "ru"
+lang = 'ru'
 
 
 # Ели необходимо, указать дополнительные правила для обработки:
-option_rules = :rule_0
+option_rules = :rule_1
 
 # Список дополнительных правил для обработки:
 
