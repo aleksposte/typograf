@@ -6,12 +6,11 @@ attr_accessor :file_input, :file_output, :option_rules, :lang
 def initialize(file_input, file_output, option_rules, lang)
 	@file_input = file_input
 	@file_output = file_output
-	@lang = lang
 	@option_rules = option_rules
+	@lang = lang
 
 # Добавление дополнительных правил для обработки:
 option = {}
-
 option[@option_rules] = true
 
 rule = " "
@@ -32,7 +31,6 @@ rule += " -e ru/other/accent" 				if option[:rule13]
 
 # Отравка параметров в типограф:
 all_options = "typograf -l #{@lang} #{rule} #{@file_input} > #{@file_output}"
-
 system(all_options)
 end
 end
